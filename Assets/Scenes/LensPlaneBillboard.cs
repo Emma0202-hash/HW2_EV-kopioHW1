@@ -5,12 +5,13 @@ public class LensPlaneBillboard : MonoBehaviour
     public Transform lensCenter; // LensCenter tyhjä
     public Transform headCamera; // XR Main Camera
 
-    private void LateUpdate()
+    private void Update()
+
     {
         if (!lensCenter || !headCamera) return;
 
-        // Pidä plane linssin keskellä
-        transform.position = lensCenter.position;
+
+        // transform.position = lensCenter.position; <- linssi tippuu
 
         // Suunta pään kamerasta linssin keskelle
         Vector3 dir = (lensCenter.position - headCamera.position).normalized;

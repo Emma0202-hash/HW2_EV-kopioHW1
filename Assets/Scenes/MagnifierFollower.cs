@@ -14,7 +14,7 @@ public class MagnifierFollower : MonoBehaviour
 
         // 1) Kamera linssin kohdalle (hieman siihen suuntaan minne VR-kamera katsoo)
         Vector3 dir = (lens.position - vrCamera.position).normalized;
-        transform.position = lens.position + dir * forwardOffset;
+        // transform.position = lens.position + dir * forwardOffset;
 
         // 2) Kamera katsoo samaan suuntaan kuin VR-pelaajan p‰‰
         transform.rotation = Quaternion.LookRotation(dir, vrCamera.up);
