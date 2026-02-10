@@ -799,6 +799,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799938813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: LeftHand/Grip
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -944628639613478452, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  m_ActionId: 26a9b492-9ead-4e86-9484-d69dc44c512e
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +965,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3985138231604124209, guid: a08295e65aebed742a0c8733e47def58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2087131137}
   m_SourcePrefab: {fileID: 100100000, guid: a08295e65aebed742a0c8733e47def58, type: 3}
 --- !u!1001 &1156675979
 PrefabInstance:
@@ -1577,7 +1594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearObjects: []
   grabbedObject: {fileID: 0}
-  action: {fileID: 1222092202}
+  action: {fileID: 1858801259}
 --- !u!54 &1156675992
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1714,34 +1731,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1222092202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: RightHand/Grip
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
-  m_ActionId: f17f4516-fcdf-4891-9411-fee4983cd798
---- !u!114 &1268704862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: LeftHand/Grip
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
-  m_ActionId: 26a9b492-9ead-4e86-9484-d69dc44c512e
 --- !u!1 &1286439801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -1796,20 +1785,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
   m_PrefabInstance: {fileID: 1156675979}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1334465231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: RightHand/SecondaryButton
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
-  m_ActionId: cba87b5e-c43b-4c38-b5dc-320d8fbb6136
 --- !u!1001 &1436788773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1926,13 +1901,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436788775}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 140e155f36b5f5b45997a10ba7e24891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lensCenter: {fileID: 154804441}
   headCamera: {fileID: 1286439807}
+--- !u!1 &1439134774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3985138231604124209, guid: a08295e65aebed742a0c8733e47def58, type: 3}
+  m_PrefabInstance: {fileID: 975360855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1453523323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,7 +1927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearObjects: []
   grabbedObject: {fileID: 0}
-  action: {fileID: 1268704862}
+  action: {fileID: 799938813}
 --- !u!54 &1453523324
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2110,7 +2090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightComp: {fileID: 0}
-  changeColorAction: {fileID: 1334465231}
+  changeColorAction: {fileID: 0}
 --- !u!1 &1621104508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,6 +2433,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lensCenter: {fileID: 154804441}
   headCamera: {fileID: 1286439807}
+--- !u!114 &1858801259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: RightHand/Grip
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -944628639613478452, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  m_ActionId: f17f4516-fcdf-4891-9411-fee4983cd798
 --- !u!1 &1897262852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,6 +2670,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4940815471079565901, guid: a08295e65aebed742a0c8733e47def58, type: 3}
   m_PrefabInstance: {fileID: 975360855}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2087131137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439134774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140e155f36b5f5b45997a10ba7e24891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lensCenter: {fileID: 154804441}
+  headCamera: {fileID: 1286439807}
 --- !u!1001 &2103383869
 PrefabInstance:
   m_ObjectHideFlags: 0
