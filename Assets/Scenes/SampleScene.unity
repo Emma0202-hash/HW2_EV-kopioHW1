@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 154804441}
+  - component: {fileID: 154804442}
   m_Layer: 0
   m_Name: LensCenter
   m_TagString: grabbable
@@ -151,6 +152,21 @@ Transform:
   - {fileID: 1731791360}
   m_Father: {fileID: 1436788774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &154804442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154804440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ba126a687f3f54a8d56d9a530ea03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lens: {fileID: 0}
+  vrCamera: {fileID: 0}
+  forwardOffset: 0.02
 --- !u!1 &226762109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 5dd37d4b7a1099245ac3a1e96cac9242, type: 3}
@@ -326,6 +342,20 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &226762119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226762109}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140e155f36b5f5b45997a10ba7e24891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lensCenter: {fileID: 154804441}
+  headCamera: {fileID: 1286439807}
 --- !u!1 &288359064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,34 +1910,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 5dd37d4b7a1099245ac3a1e96cac9242, type: 3}
       insertIndex: -1
       addedObject: {fileID: 226762115}
-    - targetCorrespondingSourceObject: {fileID: -2822187330980718575, guid: 5dd37d4b7a1099245ac3a1e96cac9242, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 5dd37d4b7a1099245ac3a1e96cac9242, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1436788776}
+      addedObject: {fileID: 226762119}
   m_SourcePrefab: {fileID: 100100000, guid: 5dd37d4b7a1099245ac3a1e96cac9242, type: 3}
 --- !u!4 &1436788774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3483240111073225647, guid: 5dd37d4b7a1099245ac3a1e96cac9242, type: 3}
   m_PrefabInstance: {fileID: 1436788773}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1436788775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2822187330980718575, guid: 5dd37d4b7a1099245ac3a1e96cac9242, type: 3}
-  m_PrefabInstance: {fileID: 1436788773}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1436788776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436788775}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 140e155f36b5f5b45997a10ba7e24891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lensCenter: {fileID: 154804441}
-  headCamera: {fileID: 1286439807}
 --- !u!1 &1439134774 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3985138231604124209, guid: a08295e65aebed742a0c8733e47def58, type: 3}
@@ -2193,13 +2204,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621104508}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 180, y: 180, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
 --- !u!1 &1653122479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,6 +2703,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1945398952204135298, guid: 36e02187e0dd07744bbb0a244fcf1efc, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945398952204135298, guid: 36e02187e0dd07744bbb0a244fcf1efc, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37cebe8fc3a68c941a17347693945598, type: 2}
     - target: {fileID: 2403227257203625124, guid: 36e02187e0dd07744bbb0a244fcf1efc, type: 3}
       propertyPath: m_Name
       value: SecretCube

@@ -11,7 +11,7 @@ public class LensPlaneBillboard : MonoBehaviour
         if (!lensCenter || !headCamera) return;
 
 
-        // transform.position = lensCenter.position; <- linssi tippuu
+        // transform.position = lensCenter.position;  <- linssi tippuu
 
         // Suunta pään kamerasta linssin keskelle
         Vector3 dir = (lensCenter.position - headCamera.position).normalized;

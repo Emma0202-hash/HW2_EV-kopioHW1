@@ -14,8 +14,8 @@ public class CustomGrab : MonoBehaviour
     public InputActionReference action; // Unityn Input System-toiminto
     bool grabbing = false; // Tarkistaa onko nappi pohjassa
 
-    Vector3 originalLocation; // Objektin alkuperäinen sijainti
-    Quaternion originalRotation; // Objektin alkuperäinen rotaatio
+    Vector3 lastPos; // Käden viimeisin sijainti
+    Quaternion lastRot; // Käden viimeisin rotaatio
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class CustomGrab : MonoBehaviour
         {
             if (c != this)
                 otherHand = c;
-        }
+        } 
     }
 
     void Update()
@@ -36,32 +36,41 @@ public class CustomGrab : MonoBehaviour
         {
             // Grab nearby object or the object in the other hand
             if (!grabbedObject)
+            
                 grabbedObject = nearObjects.Count > 0 ? nearObjects[0] : otherHand.grabbedObject;
 
             if (grabbedObject)
             {
                 // Change these to add the delta position and rotation instead
                 // Save the position and rotation at the end of Update function, so you can compare previous pos/rot to current here
-                grabbedObject.position = transform.position;
-                grabbedObject.rotation = transform.rotation;
-            }
+                Vector3 posDelta = transform.position - lastPos; // Delta-sijainti
+                Quaternion rotDelta = transform.rotation * Quaternion.Inverse(lastRot); // Delta-rotaatio (Mikä rotaatio kumoaa rotaation x?)
+
+                // Discordista
+                Vector3 vector = grabbedObject.position - transform.position;
+                Vector3 rotVector = rotDelta * vector - vector;
+
+                grabbedObject.position += posDelta + rotVector;
+                grabbedObject.rotation = rotDelta * grabbedObject.rotation;
+            } 
         }
         // If let go of button, release object
         else if (grabbedObject)
             grabbedObject = null;
 
         // Should save the current position and rotation here
-
+        lastPos = transform.position;
+        lastRot = transform.rotation;
 
     }
         // Kun ohjain koskettaa jotain
     private void OnTriggerEnter(Collider other)
     {
-        // Make sure to tag grabbable objects with the "grabbable" tag
-        // You also need to make sure to have colliders for the grabbable objects and the controllers
-        // Make sure to set the controller colliders as triggers or they will get misplaced
-        // You also need to add Rigidbody to the controllers for these functions to be triggered
-        // Make sure gravity is disabled though, or your controllers will (virtually) fall to the ground
+        // TEHTY Make sure to tag grabbable objects with the "grabbable" tag
+        // TEHTY You also need to make sure to have colliders for the grabbable objects and the controllers
+        // TEHTY Make sure to set the controller colliders as triggers or they will get misplaced
+        // TEHTY You also need to add Rigidbody to the controllers for these functions to be triggered
+        // TEHTY Make sure gravity is disabled though, or your controllers will (virtually) fall to the ground
 
         Transform t = other.transform;
         if (t && t.tag.ToLower() == "grabbable")
